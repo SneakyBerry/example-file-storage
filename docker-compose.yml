@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  file_storage:
+    depends_on:
+      - postgres
+    image: $COMMIT_HASH
+    networks:
+      - file_storage
+    env_file:
+      - .env
+    ports:
+    - 8080:8080
+    command: ["/src/scripts/start_server.sh"]
+
+  postgres:
+    image: postgres:11
+    networks:
+      - file_storage
+    environment:
+      - POSTGRES_DB=file_storage
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+    ports:
+      - 5432:5432
+
+networks:
+  file_storage:

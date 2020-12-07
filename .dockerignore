@@ -1,0 +1,8 @@
+*
+!file_storage/
+!scripts/
+!run.py
+!poetry.lock
+!pyproject.toml
+!tests/
+!yoyo.ini

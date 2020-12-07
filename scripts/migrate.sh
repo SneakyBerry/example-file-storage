@@ -1,0 +1,1 @@
+yoyo apply -vvv --batch --database "postgresql://$DB_USER:$DB_PASSWORD@$DB_SERVER:$DB_PORT/$DB_NAME" ./file_storage/migrations
